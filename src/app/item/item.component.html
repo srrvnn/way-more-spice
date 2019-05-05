@@ -1,0 +1,7 @@
+<div>
+  <h2> Label - {{currentItem.train ? 'Training' : 'Testing'}} Mode </h2>
+  <img src={{currentItem.image}}/> 
+  <label> Food <input type='checkbox' [checked]="currentItem.food" (change)="currentItem.food = !currentItem.food"/> </label>
+  <label> Spicy <input type='checkbox' [checked]="currentItem.spicy" (change)="currentItem.spicy = !currentItem.spicy"/> </label>
+  <input type='submit' (click)="submit(currentItem)"/>
+</div>
