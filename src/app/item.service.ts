@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Corpus } from './corpus';
 import { Item } from './item';
-import { ITEMS } from './mock-items';
 import { Observable, of, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +13,14 @@ export class ItemService {
   constructor(private httpClient: HttpClient) { }
 
   getItems(): Observable<Item[]> {
-    const endpoint = 'http://localhost:3000/train';
+    const endpoint = environment.serverUrl + '/train';
     return this.httpClient.get(endpoint).pipe(map((r) => {
       return r["items"].map((i) => { return <Item>i; });
     }));
   }
 
   save(item: Item): Observable<Boolean> {
-    const endpoint = 'http://localhost:3000/save';
+    const endpoint = environment.serverUrl + '/save';
     return this.httpClient.post(endpoint, item, {}).pipe(map(() => { return true; }));
   }
 
@@ -34,12 +34,12 @@ export class ItemService {
   }
 
   corpus(): Observable<Corpus> {
-    const endpoint = 'http://localhost:3000/corpus';
+    const endpoint = environment.serverUrl + '/corpus';
     return this.httpClient.get(endpoint).pipe(map((r) => {return <Corpus>r;}));
   }
 
   postFile(fileToUpload: File): Observable<boolean> {
-    const endpoint = 'http://localhost:3000/upload';
+    const endpoint = environment.serverUrl + '/upload';
     const formData: FormData = new FormData();
     formData.append('fileKey', fileToUpload, fileToUpload.name);
     return this.httpClient
