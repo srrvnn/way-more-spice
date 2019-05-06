@@ -1,0 +1,41 @@
+.container {
+    max-width: 840px;
+    margin: 50px auto;
+    padding: 20px; 
+    /* border: 1px solid red; */
+}
+
+.section {
+    margin: 50px;
+    /* border: 1px solid blue; */
+}
+
+.label {
+    margin: 10px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.label span {
+    padding: 0 20px;
+}
+
+.bar {
+    background-color:rgba(0,0,0,.12);
+    height: 50px;
+    margin: 10px;
+    border-radius: 2px;
+}
+
+.bar-percent {
+     background-color: rgba(0,0,0,.38);
+     height: 100%;
+     display: inline-block;
+}
+
+.trained .label {
+    display: flex;
+    justify-content: space-between;
+}
+

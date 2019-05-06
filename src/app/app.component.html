@@ -1,8 +1,10 @@
-<h1>{{ title }}</h1>
-<nav>
-    <a routerLink="/train">Train</a>
-</nav>
-<nav>
-    <a routerLink="/corpus">Corpus</a>
-</nav>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="title">{{title | uppercase}}</span>
+      <a mat-button routerLink="/train">Train</a>
+      <a mat-button routerLink="/corpus">Corpus</a>
+      <span class="fill-space"></span>
+      <a mat-button routerLink="/corpus">How to Use?</a>
+    </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>

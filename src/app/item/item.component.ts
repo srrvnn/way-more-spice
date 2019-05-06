@@ -20,20 +20,19 @@ export class ItemComponent implements OnInit {
 
   // retreive a list of items from the items service
   getItems(): void {
-    this.itemService.getItems().subscribe(items => this.items = items);
-    this.currentIndex = 0;
-    this.currentItem = this.items[0];
+    this.itemService.getItems().subscribe(items => {this.items = items; this.currentIndex = 0;
+    this.currentItem = this.items[0];});
   }
 
   // called on click on submit button for an item 
   submit(item: Item): void {
-    // TODO: send labeled item to server. 
-    if (this.currentIndex + 1 == this.items.length) {
-      // TODO: show message that we have run out of things to label and return 
-      this.currentIndex = 0;
-    } else {
-      this.currentIndex++;
-    }
-    this.currentItem = this.items[this.currentIndex];
+    this.itemService.save(this.currentItem).subscribe(status => {
+      if (this.currentIndex + 1 == this.items.length) {
+        this.currentItem = null;
+      } else {
+        this.currentIndex++;
+        this.currentItem = this.items[this.currentIndex];
+      }
+    });
   }
 }

@@ -1,0 +1,37 @@
+/* This is basically faking a label to look like a button, 
+this should be easier than replicated the button styles one by one.  */
+
+label {
+    border: 1px solid rgb(0,0,0,0.12);
+    padding: 0 15px;
+    height: 34px; 
+    line-height: 34px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 30px;
+}
+
+label:hover {
+    background: rgb(0,0,0,0.04);
+}
+
+.choose, .preview {
+    margin: 50px;
+    text-align: center;
+    width: auto;
+}
+
+.preview-img {
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.preview-img img {
+    margin: 10px; 
+    height: 150px;
+    border-radius: 10px;
+}
+

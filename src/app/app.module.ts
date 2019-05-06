@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CorpusComponent } from './corpus/corpus.component';
@@ -17,8 +22,14 @@ import { UploadComponent } from './upload/upload.component';
   ],
   imports: [
     BrowserModule,
+        // import HttpClientModule after BrowserModule.
+        HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatSlideToggleModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

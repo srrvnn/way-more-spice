@@ -1,5 +1,10 @@
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
+.title {
+    padding: 20px;
+    font-size: x-large;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.fill-space {
+    flex: 1 1 auto;
 }

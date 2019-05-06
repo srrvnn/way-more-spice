@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../item.service';
 import { Corpus } from '../corpus';
 
 @Component({
@@ -10,17 +11,16 @@ export class CorpusComponent implements OnInit {
 
   corpus: Corpus = {
     total: 2452,
-    total_ratio: 2452/10000,
     trained: 43,
     trained_ratio: 43/2452,
     untrained: 2409,
     untrained_ratio: 2409/2452,
-    limit: 10000,
   }
 
-  constructor() { }
+  constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    this.itemService.corpus().subscribe((corpus) => this.corpus = corpus);
   }
 
 }
