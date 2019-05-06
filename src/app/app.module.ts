@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { HttpClientModule } from '@angular/common/http';
+import {HotkeyModule} from 'angular2-hotkeys';
 
 import { AppComponent } from './app.component';
 import { CorpusComponent } from './corpus/corpus.component';
@@ -29,7 +30,8 @@ import { UploadComponent } from './upload/upload.component';
     BrowserAnimationsModule,
     MatButtonModule, 
     MatSlideToggleModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HotkeyModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

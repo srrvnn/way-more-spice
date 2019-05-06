@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../item.service';
+import { HotkeysService, Hotkey } from 'angular2-hotkeys';
 import { Item } from '../item';
 
 @Component({
@@ -12,10 +13,36 @@ export class ItemComponent implements OnInit {
   currentItem: Item;
   items: Item[];
 
-  constructor(private itemService: ItemService) {}
+  hotkeys: any[]; 
+
+  constructor(private itemService: ItemService, private hotkeysService: HotkeysService) {
+  this.hotkeys = this.hotkeys || [];  
+  this.hotkeys.push(this.hotkeysService.add(new Hotkey('1', (event: KeyboardEvent): boolean => {
+      if (this.currentItem) {
+        this.currentItem.food = !this.currentItem.food;
+      }
+      return false;
+  })));
+  this.hotkeys.push(this.hotkeysService.add(new Hotkey('2', (event: KeyboardEvent): boolean => {
+    if (this.currentItem) {
+      this.currentItem.spicy = !this.currentItem.spicy;
+    }
+    return false; // Prevent bubbling
+  })));
+  this.hotkeys.push(this.hotkeysService.add(new Hotkey('return', (event: KeyboardEvent): boolean => {
+    this.submit(this.currentItem);
+    return false; // Prevent bubbling
+  })));
+  }
 
   ngOnInit() {
     this.getItems();
+  }
+
+  ngOnDestroy() {
+    for (let hotkey of this.hotkeys) {
+      this.hotkeysService.remove(hotkey);
+    }
   }
 
   // retreive a list of items from the items service
