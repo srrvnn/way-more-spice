@@ -34,4 +34,11 @@ img {
     margin: 40px auto; 
 }
 
-/* big label override */
+.container.zero, .zero img {
+    display: block
+}
+
+.zero p {
+    text-align: center;
+    padding: 20px;
+}

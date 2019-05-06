@@ -20,6 +20,7 @@
     <button mat-stroked-button (click)="submit(currentItem)">SUBMIT</button>
   </div>
 </div>
-<div class="container" *ngIf="!currentItem">
-  There are no items to train. Please visit Corpus to add some.
+<div class="container zero" *ngIf="!currentItem">
+  <img src="assets/img/zero.jpg" alt="Nothing to label"/>
+  <p>No more items to label, please add new image in here: <a mat-button routerLink="/corpus">Corpus</a></p> 
 </div>

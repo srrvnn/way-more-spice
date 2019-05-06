@@ -9,13 +9,7 @@ import { Corpus } from '../corpus';
 })
 export class CorpusComponent implements OnInit {
 
-  corpus: Corpus = {
-    total: 2452,
-    trained: 43,
-    trained_ratio: 43/2452,
-    untrained: 2409,
-    untrained_ratio: 2409/2452,
-  }
+  corpus: Corpus;
 
   constructor(private itemService: ItemService) {}
 
