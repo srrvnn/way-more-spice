@@ -34,7 +34,8 @@ img {
 }
 
 .container.zero, .zero img {
-    display: block
+    display: block;
+    text-align: center;
 }
 
 .zero p {

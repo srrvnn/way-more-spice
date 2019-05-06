@@ -64,4 +64,8 @@ export class ItemComponent implements OnInit {
       }
     });
   }
+
+  refresh(): void {
+    this.getItems();
+  }
 }
