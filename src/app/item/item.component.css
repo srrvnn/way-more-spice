@@ -30,8 +30,7 @@ img {
 }
 
 .label-container button {
-    font-size: 24px;
-    margin: 40px auto; 
+    margin: 40px 35px; 
 }
 
 .container.zero, .zero img {
@@ -41,4 +40,28 @@ img {
 .zero p {
     text-align: center;
     padding: 20px;
+}
+
+.label-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+kbd {
+    width: 24px;
+    height: 36px;
+    font-size: 18px;
+    line-height: 2;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.1em 0.5em;
+    margin: 0 40px;
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+    background-color: #f7f7f7;
+}
+
+kbd.toggle {
+    margin-top: 15px;
 }
