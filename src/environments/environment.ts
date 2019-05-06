@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://powerful-harbor-75340.herokuapp.com'
+  serverUrl: 'http://localhost:3000'
 };
 
 /*
