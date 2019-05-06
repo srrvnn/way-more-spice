@@ -1,0 +1,33 @@
+.container {
+    max-width: 840px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: left;
+    line-height: 2;
+    border-left: 1px solid black;
+    
+}
+
+p, h4, ol, ul {
+    margin: 20px 10px; 
+}
+
+p {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol li, ul li {
+    margin: 0 10px;
+}

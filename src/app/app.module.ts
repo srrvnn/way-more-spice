@@ -13,6 +13,7 @@ import { CorpusComponent } from './corpus/corpus.component';
 import { ItemComponent } from './item/item.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UploadComponent } from './upload/upload.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UploadComponent } from './upload/upload.component';
     CorpusComponent,
     ItemComponent,
     UploadComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,
