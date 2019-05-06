@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Corpus } from './corpus';
 import { Item } from './item';
 import { Observable, of, forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
@@ -39,11 +39,12 @@ export class ItemService {
   }
 
   postFile(fileToUpload: File): Observable<boolean> {
-    const endpoint = environment.serverUrl + '/upload';
-    const formData: FormData = new FormData();
-    formData.append('fileKey', fileToUpload, fileToUpload.name);
-    return this.httpClient
-      .post(endpoint, formData, { headers: {} })
-      .pipe(map(() => { return true; }));
+    const endpoint = environment.serverUrl + '/s3signedurl?content_type=' + fileToUpload.type + '&extension=' + fileToUpload.name.split('.').pop();
+    console.log(endpoint);
+    var signed_url = '';
+
+    return this.httpClient.get(endpoint).pipe(
+      mergeMap(res => this.httpClient.put(res["urls"][0], fileToUpload))).pipe(
+        map((res) => { return true; }));
   }
 }
