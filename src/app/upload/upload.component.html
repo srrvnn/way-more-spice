@@ -1,7 +1,7 @@
 <div class="container">
   <div class="choose" *ngIf="!files"> 
     <input style="display:none" id="corpus-add" multiple type="file" (change)="openFiles($event.target.files)"/>
-    <label for="corpus-add">ADD NEW IMAGES</label>
+    <label mat-flat-button for="corpus-add">ADD NEW IMAGES</label>
   </div> 
 <div class="preview" *ngIf="preview"> 
       <div [ngClass]="{'preview-img':true, 'loading': loading}">

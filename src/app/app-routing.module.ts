@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'train', component: ItemComponent },
   { path: 'corpus', component: CorpusComponent },
   { path: 'help', component: HelpComponent },
-  { path: '', redirectTo: '/corpus', pathMatch: 'full' }
+  { path: '', redirectTo: '/train', pathMatch: 'full' }
 
 ];
 

@@ -1,0 +1,22 @@
+@import "../variables.scss";
+
+.title {
+    padding: 14px;
+    font-size: x-large;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.fill-space {
+    flex: 1 1 auto;
+}
+
+.waymo {
+    color: #1c1c1c;
+}
+
+.spice {
+    color: #e53935;
+    font-size: 23px;
+    font-family: 'Chelsea Market', cursive !important; // TODO: find why angular doesn't seem to allow this.
+}

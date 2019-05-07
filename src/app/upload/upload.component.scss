@@ -1,8 +1,10 @@
 /* This is basically faking a label to look like a button, 
 this should be easier than replicated the button styles one by one.  */
 
+@import "../../variables.scss";
+
 label {
-    border: 1px solid rgb(0,0,0,0.12);
+    border: 1px solid $wms-gray;
     padding: 0 15px;
     height: 34px; 
     line-height: 34px;
@@ -13,7 +15,7 @@ label {
 }
 
 label:hover {
-    background: rgb(0,0,0,0.04);
+    background: lighten($wms-gray, 25%);
 }
 
 .choose, .preview {

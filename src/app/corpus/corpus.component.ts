@@ -5,7 +5,7 @@ import { Corpus } from '../corpus';
 @Component({
   selector: 'app-corpus',
   templateUrl: './corpus.component.html',
-  styleUrls: ['./corpus.component.css']
+  styleUrls: ['./corpus.component.scss']
 })
 export class CorpusComponent implements OnInit {
 
