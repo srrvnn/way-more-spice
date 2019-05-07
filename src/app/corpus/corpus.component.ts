@@ -14,6 +14,10 @@ export class CorpusComponent implements OnInit {
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    this.getCorpus();
+  }
+
+  getCorpus(): void {
     this.itemService.corpus().subscribe((corpus) => this.corpus = corpus);
   }
 

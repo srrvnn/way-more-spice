@@ -2,7 +2,7 @@
     max-width: 840px;
     margin: 50px auto;
     padding: 20px; 
-    /* border: 1px solid red; */
+    text-align: center;
 }
 
 .section {
@@ -26,6 +26,7 @@
     height: 50px;
     margin: 10px;
     border-radius: 2px;
+    text-align: left;
 }
 
 .bar-percent {
@@ -37,5 +38,10 @@
 .trained .label {
     display: flex;
     justify-content: space-between;
+}
+
+.loading {
+    height: 8px;
+    padding: 50px; 
 }
 

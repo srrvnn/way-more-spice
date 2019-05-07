@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ItemService } from '../item.service';
 
 @Component({
@@ -11,6 +11,10 @@ export class UploadComponent implements OnInit {
   files: File[];
   preview: (string | ArrayBuffer)[];
   uploadStatus: boolean;
+  loading: boolean = false; 
+
+  @Output()
+  uploaded = new EventEmitter<string>();
 
   constructor(private itemService: ItemService) { }
 
@@ -18,6 +22,7 @@ export class UploadComponent implements OnInit {
   }
 
   openFiles(files: FileList) : void {
+    this.loading = true;
     // TODO: is it possible to use ml5.js to eliminate non food images?
     for (var i = 0; i < files.length; i++) {
       this.preview = this.preview || [];
@@ -28,15 +33,19 @@ export class UploadComponent implements OnInit {
       reader.onload = e => this.preview.push(reader.result);
       reader.readAsDataURL(files.item(i));
     }
+    this.loading = false;
   }
 
   uploadFiles(): void {
+    this.loading = true;
     if (!this.files.length) {
       this.clearFiles();
     }
     this.itemService.upload(this.files).subscribe(status => {
       this.clearFiles();
       this.uploadStatus = status; 
+      this.loading = false;
+      this.uploaded.emit('complete');
     });
   }
 

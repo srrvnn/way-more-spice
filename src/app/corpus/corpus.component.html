@@ -10,8 +10,8 @@
         </div>
         <div class="bar"><span class="bar-percent" [ngStyle]="{'width': corpus.trained_ratio | percent:'1.2-2'}"></span></div>
     </div>
-    <app-upload></app-upload>
+    <app-upload (uploaded)=getCorpus()></app-upload>
 </div>
-<div class="container" *ngIf="!corpus">
-    ...
+<div class="container loading" *ngIf="!corpus">
+        <img class="loading" src="assets/img/244.svg" alt="Nothing to label"/>
     </div>
