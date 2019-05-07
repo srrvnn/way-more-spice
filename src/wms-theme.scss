@@ -1,0 +1,90 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$wms-green: (
+    50 : #e1fcf3,
+    100 : #b4f8e2,
+    200 : #83f4cf,
+    300 : #51efbc,
+    400 : #2bebad,
+    500 : #06e89f,
+    600 : #05e597,
+    700 : #04e28d,
+    800 : #03de83,
+    900 : #02d872,
+    A100 : #ffffff,
+    A200 : #cdffe4,
+    A400 : #9affc9,
+    A700 : #80ffbc,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$wms-blue: (
+    50 : #e1efff,
+    100 : #b4d7fe,
+    200 : #82bcfe,
+    300 : #4fa1fe,
+    400 : #2a8dfd,
+    500 : #0479fd,
+    600 : #0371fd,
+    700 : #0366fc,
+    800 : #025cfc,
+    900 : #0149fc,
+    A100 : #ffffff,
+    A200 : #eff3ff,
+    A400 : #bccbff,
+    A700 : #a2b7ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$wms-app-primary: mat-palette($wms-green);
+$wms-app-accent:  mat-palette($wms-blue);
+
+// The warn palette is optional (defaults to red).
+$wms-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$wms-app-theme: mat-light-theme($wms-app-primary, $wms-app-accent, $wms-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($wms-app-theme);

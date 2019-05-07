@@ -7,6 +7,6 @@
       <div [ngClass]="{'preview-img':true, 'loading': loading}">
         <img *ngFor="let img of preview" [src]="img"/>
       </div>
-      <button mat-stroked-button (click)="uploadFiles()">UPLOAD</button>
+      <button mat-flat-button color="accent" (click)="uploadFiles()">UPLOAD</button>
   </div>
 </div>
