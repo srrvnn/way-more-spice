@@ -2,9 +2,8 @@
   <img class="loading" src="assets/img/244.svg" alt="Loading"/>
 </div>
 <div class="container zero" *ngIf="status == 'done'">
-  <img src="assets/img/zero.jpg" alt="Nothing to label"/>
   <p>No more items to label, please add new images in the Corpus tab.</p> 
-  <button mat-stroked-button (click)="refresh()">REFRESH</button>
+  <button mat-flat-button color="primary" (click)="refresh()">REFRESH</button>
 </div>
 <div class="container" *ngIf="currentItem">
   <div class="img-container">

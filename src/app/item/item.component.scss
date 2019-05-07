@@ -34,16 +34,25 @@ img {
 .container.zero {
     display: block;
     text-align: center;
+    background: url(/assets/img/zero.jpg);
+    background-size: contain;
+    position: relative;
+    height: 640px;
 }
 
-.zero img {
-    display: block;
-    height: 480px;
+.zero button {
+    bottom: -90%;
 }
 
 .zero p {
     text-align: center;
     padding: 20px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
 }
 
 .label-field {

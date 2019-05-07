@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .container {
     max-width: 840px;
     margin: 100px auto;
@@ -7,7 +9,6 @@
 
 .section {
     margin: 50px;
-    /* border: 1px solid blue; */
 }
 
 .label {
@@ -22,7 +23,7 @@
 }
 
 .bar {
-    background-color:rgba(0,0,0,.12);
+    background-color: $wms-gray;
     height: 50px;
     margin: 10px;
     border-radius: 2px;
@@ -30,7 +31,7 @@
 }
 
 .bar-percent {
-     background-color: rgba(0,0,0,.38);
+     background-color: $wms-blue;
      height: 100%;
      display: inline-block;
 }
