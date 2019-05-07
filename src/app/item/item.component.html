@@ -12,13 +12,13 @@
   <div class="label-container">
     <div class="label-field"> 
       <mat-slide-toggle class="waymo-label"
-        [checked]="currentItem.food" (change)="currentItem.food = !currentItem.food">FOOD
+        [checked]="currentItem.food" (change)="updateFood()">FOOD
       </mat-slide-toggle>
       <kbd class="toggle" title="Keyboard Shortcut">1</kbd>
     </div> 
     <div class="label-field"> 
       <mat-slide-toggle class="waymo-label"
-        [checked]="currentItem.spicy" (change)="currentItem.spicy = !currentItem.spicy">SPICY
+        [checked]="currentItem.spicy" (change)="updateSpicy()">SPICY
       </mat-slide-toggle>
       <kbd class="toggle" title="Keyboard Shortcut">2</kbd>
     </div> 

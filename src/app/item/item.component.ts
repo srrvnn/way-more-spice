@@ -21,13 +21,13 @@ export class ItemComponent implements OnInit {
   constructor(private itemService: ItemService, private hotkeysService: HotkeysService) {
     this.hotkeys.concat(this.hotkeysService.add(new Hotkey('1', (event: KeyboardEvent): boolean => {
       if (this.currentItem) {
-        this.currentItem.food = !this.currentItem.food;
+        this.updateFood();
       }
       return false;
     })));
     this.hotkeys.concat(this.hotkeysService.add(new Hotkey('2', (event: KeyboardEvent): boolean => {
       if (this.currentItem) {
-        this.currentItem.spicy = !this.currentItem.spicy;
+        this.updateSpicy();
       }
       return false; // Prevent bubbling
     })));
@@ -78,5 +78,25 @@ export class ItemComponent implements OnInit {
 
   refresh(): void {
     this.getItems();
+  }
+
+  updateFood(): void {
+    // marking it as not food
+    if (this.currentItem.food) {
+      this.currentItem.food = false;
+      this.currentItem.spicy = false;
+    } else {
+      this.currentItem.food = true;
+    }
+  }
+
+  updateSpicy(): void {
+    // marking it as not spicy
+    if (this.currentItem.spicy) {
+      this.currentItem.spicy = false;
+    } else {
+      this.currentItem.food = true;
+      this.currentItem.spicy = true;
+    }
   }
 }
