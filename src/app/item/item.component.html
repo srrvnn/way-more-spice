@@ -15,17 +15,17 @@
       <mat-slide-toggle class="waymo-label"
         [checked]="currentItem.food" (change)="currentItem.food = !currentItem.food">FOOD
       </mat-slide-toggle>
-      <kbd class="toggle">1</kbd>
+      <kbd class="toggle" title="Keyboard Shortcut">1</kbd>
     </div> 
     <div class="label-field"> 
       <mat-slide-toggle class="waymo-label"
         [checked]="currentItem.spicy" (change)="currentItem.spicy = !currentItem.spicy">SPICY
       </mat-slide-toggle>
-      <kbd class="toggle">2</kbd>
+      <kbd class="toggle" title="Keyboard Shortcut">2</kbd>
     </div> 
     <div class="label-field">
       <button mat-stroked-button (click)="submit(currentItem)">SUBMIT</button>
-      <kbd class="return">↵</kbd>
+      <kbd class="return" title="Keyboard Shortcut">↵</kbd>
     </div>
   </div>
 </div>
