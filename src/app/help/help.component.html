@@ -1,5 +1,5 @@
 <div class="container">
-  <p>Waymo' Spice is a website to help label images to help train an ML model to classify spicy food. This is a weekend hack project, so emphasis is on getting things to work for learning and POC, and therefore not necessarily on the quality of code. </p>
+  <p>Waymo' Spice is a website to help label images to help train an ML model to classify spicy food. This is a weekend hack project, so emphasis is on getting things to work, and not necessarily quality of code. </p>
 
   <h4>How to use</h4>
   <p>
@@ -8,7 +8,7 @@
   </p>
 
   <h4>Features</h4>
-  <p>Current features include: 
+  <p>
     <li>Upload images to be labeled, in batches.</li>
     <li>Preview images before being uploaded.</li>
     <li>Label images as Food or not, and Spicy or not.</li>
@@ -19,23 +19,26 @@
 
   <h4>Future Work</h4>
   <p>
-    <li>Use a key-value fast lookup database instead of files.</li>
-    <li>Add Food Image dataset as default.</li> 
+    <li>Add food image sets as default.</li> 
     <li>Compress and use EXIF metadata from images when storing on the server.</li>
     <li>Using tensorflow.js to build a CNN model for the Test tab.</li>
-    <li>Using ml5.js to classify as Food to avoid that labeling.</li>
+    <li>Using ml5.js to classify as food to avoid that labeling.</li>
   </p>
 
   <h4>Technology Stack</h4>
-  <p>The following keep this website together: 
-    <li>Angular, frontend code</li> 
-    <li>Node.js, backend code</li>
-    <li>Espress, backend REST framework</li> 
-    <li>Github, to host frontend code</li>
-    <li>Heroku, to host backend code</li>
-
+  <p>
+    <li>Angular - JavaScript view framework </li> 
+    <li>Node.js - server side scripting </li>
+    <li>Espress - server framework </li> 
+    <li>AWS S3 - object storage to store images </li>
+    <li>PostgreSQL - rel DB to store labels </li>
+    <li>Github - version control hosting frontend code </li>
+    <li>Heroku - cloud service hosting server code </li>
   </p>
 
+  <h4>Code </h4>
+  <p> Find the code on Github: <a href="http://github.com/srrvnn/way-more-spice">client</a> & <a href="http://github.com/srrvnn/way-more-server">server</a>.</p>
+
   <h4>About</h4>
-  <p>Built by srrvnn@ for the Team at Waymo.</p> 
+  <p>Built by <a href="go/srrvnn-resume">srrvnn@</a> for the team at Waymo.</p> 
 </div>
