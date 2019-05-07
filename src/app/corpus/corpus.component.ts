@@ -9,16 +9,21 @@ import { Corpus } from '../corpus';
 })
 export class CorpusComponent implements OnInit {
 
+  status: string;
   corpus: Corpus;
 
   constructor(private itemService: ItemService) {}
 
   ngOnInit() {
+    this.status = 'loading';
     this.getCorpus();
   }
 
   getCorpus(): void {
-    this.itemService.corpus().subscribe((corpus) => this.corpus = corpus);
+    this.itemService.corpus().subscribe((corpus) => {
+      this.status = 'done';
+      this.corpus = corpus;
+    });
   }
 
 }

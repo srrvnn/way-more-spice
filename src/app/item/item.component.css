@@ -33,9 +33,14 @@ img {
     margin: 40px 35px; 
 }
 
-.container.zero, .zero img {
+.container.zero {
     display: block;
     text-align: center;
+}
+
+.zero img {
+    display: block;
+    height: 480px;
 }
 
 .zero p {
@@ -65,4 +70,9 @@ kbd {
 
 kbd.toggle {
     margin-top: 15px;
+}
+
+.loading {
+    height: 8px;
+    padding: 50px; 
 }

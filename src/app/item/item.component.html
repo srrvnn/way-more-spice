@@ -1,34 +1,31 @@
+<div class="container loading" *ngIf="status == 'loading'">
+  <img class="loading" src="assets/img/244.svg" alt="Loading"/>
+</div>
+<div class="container zero" *ngIf="status == 'done'">
+  <img src="assets/img/zero.jpg" alt="Nothing to label"/>
+  <p>No more items to label, please add new images in the Corpus tab.</p> 
+  <button mat-stroked-button (click)="refresh()">REFRESH</button>
+</div>
 <div class="container" *ngIf="currentItem">
   <div class="img-container">
     <img src={{currentItem.image}}/> 
   </div>
   <div class="label-container">
     <div class="label-field"> 
-      <mat-slide-toggle
-      class="waymo-label"
-      [checked]="currentItem.food" (change)="currentItem.food = !currentItem.food">
-        FOOD
+      <mat-slide-toggle class="waymo-label"
+        [checked]="currentItem.food" (change)="currentItem.food = !currentItem.food">FOOD
       </mat-slide-toggle>
       <kbd class="toggle">1</kbd>
     </div> 
     <div class="label-field"> 
-      <mat-slide-toggle
-      class="waymo-label"
-      [checked]="currentItem.spicy" (change)="currentItem.spicy = !currentItem.spicy">
-        SPICY
+      <mat-slide-toggle class="waymo-label"
+        [checked]="currentItem.spicy" (change)="currentItem.spicy = !currentItem.spicy">SPICY
       </mat-slide-toggle>
       <kbd class="toggle">2</kbd>
     </div> 
     <div class="label-field">
-    <button mat-stroked-button (click)="submit(currentItem)">SUBMIT</button>
-    <kbd class="return">↵</kbd>
-  
+      <button mat-stroked-button (click)="submit(currentItem)">SUBMIT</button>
+      <kbd class="return">↵</kbd>
     </div>
-    
   </div>
-</div>
-<div class="container zero" *ngIf="!currentItem">
-  <img src="assets/img/zero.jpg" alt="Nothing to label"/>
-  <p>No more items to label, please add new images in the Corpus tab.</p> 
-  <button mat-stroked-button (click)="refresh()">REFRESH</button>
 </div>

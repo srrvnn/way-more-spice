@@ -1,3 +1,6 @@
+<div class="container loading" *ngIf="status == 'loading'">
+    <img class="loading" src="assets/img/244.svg" alt="Loading"/>
+</div>
 <div class="container" *ngIf="corpus">
     <div class="section total">
         <div class="label">{{corpus.total}} images in total </div>
@@ -12,6 +15,3 @@
     </div>
     <app-upload (uploaded)=getCorpus()></app-upload>
 </div>
-<div class="container loading" *ngIf="!corpus">
-        <img class="loading" src="assets/img/244.svg" alt="Nothing to label"/>
-    </div>
