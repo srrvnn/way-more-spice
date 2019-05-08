@@ -1,29 +1,37 @@
 <div class="container loading" *ngIf="status == 'loading'">
-  <img class="loading" src="assets/img/244.svg" alt="Loading"/>
+  <img class="loading" src="assets/img/244.svg" alt="Loading" />
 </div>
 <div class="container zero" *ngIf="status == 'done'">
-  <p>No more items to label, please add new images in the Corpus tab.</p> 
+  <p>No more items to label, please add new images in the Corpus tab.</p>
   <button mat-flat-button color="primary" (click)="refresh()">REFRESH</button>
 </div>
 <div class="container" *ngIf="currentItem">
   <div class="img-container">
-    <img src={{currentItem.image}}/> 
+    <img src="{{ currentItem.image }}" />
   </div>
   <div class="label-container">
-    <div class="label-field"> 
-      <mat-slide-toggle class="waymo-label"
-        [checked]="currentItem.food" (change)="updateFood()">FOOD
+    <div class="label-field">
+      <mat-slide-toggle
+        class="waymo-label"
+        [checked]="currentItem.food"
+        (change)="updateFood()"
+        >FOOD
       </mat-slide-toggle>
       <kbd class="toggle" title="Keyboard Shortcut">1</kbd>
-    </div> 
-    <div class="label-field"> 
-      <mat-slide-toggle class="waymo-label"
-        [checked]="currentItem.spicy" (change)="updateSpicy()">SPICY
+    </div>
+    <div class="label-field">
+      <mat-slide-toggle
+        class="waymo-label"
+        [checked]="currentItem.spicy"
+        (change)="updateSpicy()"
+        >SPICY
       </mat-slide-toggle>
       <kbd class="toggle" title="Keyboard Shortcut">2</kbd>
-    </div> 
+    </div>
     <div class="label-field">
-      <button mat-flat-button color="accent" (click)="submit(currentItem)">SUBMIT</button>
+      <button mat-flat-button color="accent" (click)="submit(currentItem)">
+        SUBMIT
+      </button>
       <kbd class="return" title="Keyboard Shortcut">↵</kbd>
     </div>
   </div>

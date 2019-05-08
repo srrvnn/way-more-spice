@@ -1,17 +1,30 @@
 <div class="container loading" *ngIf="status == 'loading'">
-    <img class="loading" src="assets/img/244.svg" alt="Loading"/>
+  <img class="loading" src="assets/img/244.svg" alt="Loading" />
 </div>
 <div class="container" *ngIf="corpus">
-    <div class="section total">
-        <div class="label">{{corpus.total}} images in total </div>
-        <div class="bar"> </div>
+  <div class="section total">
+    <div class="label">{{ corpus.total }} images in total</div>
+    <div class="bar"></div>
+  </div>
+  <div class="section trained">
+    <div class="label">
+      <span>
+        {{ corpus.trained }} trained ({{
+          corpus.trained_ratio | percent: "1.1-1"
+        }})
+      </span>
+      <span>
+        {{ corpus.untrained }} to be trained ({{
+          corpus.untrained_ratio | percent: "1.1-1"
+        }})
+      </span>
     </div>
-    <div class="section trained">
-        <div class="label"> 
-            <span> {{corpus.trained}} trained ({{corpus.trained_ratio | percent:'1.1-1'}}) </span>
-            <span> {{corpus.untrained}} to be trained ({{corpus.untrained_ratio | percent:'1.1-1'}}) </span>
-        </div>
-        <div class="bar"><span class="bar-percent" [ngStyle]="{'width': corpus.trained_ratio | percent:'1.2-2'}"></span></div>
+    <div class="bar">
+      <span
+        class="bar-percent"
+        [ngStyle]="{ width: corpus.trained_ratio | percent: '1.2-2' }"
+      ></span>
     </div>
-    <app-upload (uploaded)=getCorpus()></app-upload>
+  </div>
+  <app-upload (uploaded)="getCorpus()"></app-upload>
 </div>

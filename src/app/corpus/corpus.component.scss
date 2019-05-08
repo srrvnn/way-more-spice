@@ -1,48 +1,47 @@
 @import "../../variables.scss";
 
 .container {
-    max-width: 840px;
-    margin: 100px auto;
-    padding: 20px; 
-    text-align: center;
+  max-width: 840px;
+  margin: 100px auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .section {
-    margin: 50px;
+  margin: 50px;
 }
 
 .label {
-    margin: 10px;
-    font-size: 24px;
-    line-height: 36px;
-    text-align: center;
+  margin: 10px;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
 }
 
 .label span {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .bar {
-    background-color: $wms-gray;
-    height: 50px;
-    margin: 10px;
-    border-radius: 2px;
-    text-align: left;
+  background-color: $wms-gray;
+  height: 50px;
+  margin: 10px;
+  border-radius: 2px;
+  text-align: left;
 }
 
 .bar-percent {
-     background-color: $wms-blue;
-     height: 100%;
-     display: inline-block;
+  background-color: $wms-blue;
+  height: 100%;
+  display: inline-block;
 }
 
 .trained .label {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .loading {
-    height: 8px;
-    padding: 50px; 
+  height: 8px;
+  padding: 50px;
 }
-

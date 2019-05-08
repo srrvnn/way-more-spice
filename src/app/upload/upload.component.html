@@ -1,12 +1,20 @@
 <div class="container">
-  <div class="choose" *ngIf="!files"> 
-    <input style="display:none" id="corpus-add" multiple type="file" (change)="openFiles($event.target.files)"/>
+  <div class="choose" *ngIf="!files">
+    <input
+      style="display:none"
+      id="corpus-add"
+      multiple
+      type="file"
+      (change)="openFiles($event.target.files)"
+    />
     <label mat-flat-button for="corpus-add">ADD NEW IMAGES</label>
-  </div> 
-<div class="preview" *ngIf="preview"> 
-      <div [ngClass]="{'preview-img':true, 'loading': loading}">
-        <img *ngFor="let img of preview" [src]="img"/>
-      </div>
-      <button mat-flat-button color="accent" (click)="uploadFiles()">UPLOAD</button>
+  </div>
+  <div class="preview" *ngIf="preview">
+    <div [ngClass]="{ 'preview-img': true, loading: loading }">
+      <img *ngFor="let img of preview" [src]="img" />
+    </div>
+    <button mat-flat-button color="accent" (click)="uploadFiles()">
+      UPLOAD
+    </button>
   </div>
 </div>
