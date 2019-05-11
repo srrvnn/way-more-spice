@@ -7,13 +7,13 @@
 </div>
 <div class="container" *ngIf="currentItem">
   <div class="img-container">
-    <img src="{{ currentItem.image }}" />
+    <img src="{{ currentItem.image_url }}" />
   </div>
   <div class="label-container">
     <div class="label-field">
       <mat-slide-toggle
         class="waymo-label"
-        [checked]="currentItem.food"
+        [checked]="currentItem.food_label"
         (change)="updateFood()"
         >FOOD
       </mat-slide-toggle>
@@ -22,7 +22,7 @@
     <div class="label-field">
       <mat-slide-toggle
         class="waymo-label"
-        [checked]="currentItem.spicy"
+        [checked]="currentItem.spicy_label"
         (change)="updateSpicy()"
         >SPICY
       </mat-slide-toggle>

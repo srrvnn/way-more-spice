@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ItemService } from "../item.service";
+import { ImageService } from "../image.service";
 import { Corpus } from "../corpus";
 
 @Component({
@@ -11,7 +11,7 @@ export class CorpusComponent implements OnInit {
   status: string;
   corpus: Corpus;
 
-  constructor(private itemService: ItemService) {}
+  constructor(private ImageService: ImageService) {}
 
   ngOnInit() {
     this.status = "loading";
@@ -19,9 +19,9 @@ export class CorpusComponent implements OnInit {
   }
 
   getCorpus(): void {
-    this.itemService.corpus().subscribe(corpus => {
+    this.ImageService.getImages().subscribe(response => {
       this.status = "done";
-      this.corpus = corpus;
+      this.corpus = response;
     });
   }
 }

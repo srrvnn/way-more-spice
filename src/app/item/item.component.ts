@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ItemService } from "../item.service";
+import { ImageService } from "../image.service";
+import { LabelService } from "../label.service";
 import { HotkeysService, Hotkey } from "angular2-hotkeys";
 import { Item } from "../item";
 
@@ -18,7 +19,8 @@ export class ItemComponent implements OnInit {
   hotkeys: Hotkey[] = [];
 
   constructor(
-    private itemService: ItemService,
+    private ImageService: ImageService,
+    private LabelService: LabelService,
     private hotkeysService: HotkeysService
   ) {
     this.hotkeys.concat(
@@ -62,7 +64,7 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.status = "loading";
-    this.getItems();
+    this.getImages();
   }
 
   ngOnDestroy() {
@@ -72,9 +74,9 @@ export class ItemComponent implements OnInit {
   }
 
   // retreive a list of items from the items service
-  getItems(): void {
-    this.itemService.getItems().subscribe(items => {
-      this.items = items;
+  getImages(): void {
+    this.ImageService.getUntrainedImages().subscribe(images => {
+      this.items = images;
       this.currentIndex = 0;
       this.currentItem = this.items[0];
 
@@ -88,7 +90,7 @@ export class ItemComponent implements OnInit {
 
   // called on click on submit button for an item
   submit(item: Item): void {
-    this.itemService.save(this.currentItem).subscribe(status => {
+    this.LabelService.save(this.currentItem).subscribe(status => {
       if (this.currentIndex + 1 == this.items.length) {
         this.currentItem = null;
         this.status = "done";
@@ -100,26 +102,26 @@ export class ItemComponent implements OnInit {
   }
 
   refresh(): void {
-    this.getItems();
+    this.getImages();
   }
 
   updateFood(): void {
     // marking it as not food
-    if (this.currentItem.food) {
-      this.currentItem.food = false;
-      this.currentItem.spicy = false;
+    if (this.currentItem.food_label) {
+      this.currentItem.food_label = false;
+      this.currentItem.spicy_label = false;
     } else {
-      this.currentItem.food = true;
+      this.currentItem.food_label = true;
     }
   }
 
   updateSpicy(): void {
     // marking it as not spicy
-    if (this.currentItem.spicy) {
-      this.currentItem.spicy = false;
+    if (this.currentItem.spicy_label) {
+      this.currentItem.spicy_label = false;
     } else {
-      this.currentItem.food = true;
-      this.currentItem.spicy = true;
+      this.currentItem.food_label = true;
+      this.currentItem.spicy_label = true;
     }
   }
 }

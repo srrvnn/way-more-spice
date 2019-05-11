@@ -4,4 +4,5 @@ export class Corpus {
   trained_ratio: number;
   untrained: number;
   untrained_ratio: number;
+  images: [];
 }

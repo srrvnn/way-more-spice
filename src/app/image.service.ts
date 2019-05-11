@@ -9,25 +9,16 @@ import { environment } from "../environments/environment";
 @Injectable({
   providedIn: "root"
 })
-export class ItemService {
+export class ImageService {
   constructor(private httpClient: HttpClient) {}
 
-  getItems(): Observable<Item[]> {
-    const endpoint = environment.serverUrl + "/train";
+  getUntrainedImages(): Observable<Item[]> {
+    const endpoint = environment.serverUrl + "/images/untrained";
     return this.httpClient.get(endpoint).pipe(
-      map(r => {
-        return r["items"].map(i => {
-          return <Item>i;
+      map(response => {
+        return response["images"].map(image => {
+          return <Item>image;
         });
-      })
-    );
-  }
-
-  save(item: Item): Observable<Boolean> {
-    const endpoint = environment.serverUrl + "/save";
-    return this.httpClient.post(endpoint, item, {}).pipe(
-      map(() => {
-        return true;
       })
     );
   }
@@ -41,30 +32,34 @@ export class ItemService {
     return forkJoin(...posts);
   }
 
-  corpus(): Observable<Corpus> {
-    const endpoint = environment.serverUrl + "/corpus";
+  getImages(): Observable<Corpus> {
+    const endpoint = environment.serverUrl + "/images";
     return this.httpClient.get(endpoint).pipe(
-      map(r => {
-        return <Corpus>r;
+      map(response => {
+        return <Corpus>response;
       })
     );
   }
 
   postFile(fileToUpload: File): Observable<boolean> {
-    const endpoint =
-      environment.serverUrl +
-      "/s3signedurl?content_type=" +
-      fileToUpload.type +
-      "&extension=" +
-      fileToUpload.name.split(".").pop();
-    console.log(endpoint);
+    const endpoint = environment.serverUrl + "/images";
     var signed_url = "";
 
     return this.httpClient
-      .get(endpoint)
-      .pipe(mergeMap(res => this.httpClient.put(res["urls"][0], fileToUpload)))
+      .post(
+        endpoint,
+        {
+          content_type: fileToUpload.type,
+          extension: fileToUpload.name.split(".").pop()
+        },
+        {}
+      )
+      .pipe(
+        mergeMap(response => this.httpClient.put(response["url"], fileToUpload))
+      )
       .pipe(
         map(res => {
+          // TODO: handle errors from uploading to AWS
           return true;
         })
       );

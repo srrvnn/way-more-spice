@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { ItemService } from "../item.service";
+import { ImageService } from "../image.service";
 
 @Component({
   selector: "app-upload",
@@ -15,7 +15,7 @@ export class UploadComponent implements OnInit {
   @Output()
   uploaded = new EventEmitter<string>();
 
-  constructor(private itemService: ItemService) {}
+  constructor(private ImageService: ImageService) {}
 
   ngOnInit() {}
 
@@ -39,7 +39,7 @@ export class UploadComponent implements OnInit {
     if (!this.files.length) {
       this.clearFiles();
     }
-    this.itemService.upload(this.files).subscribe(status => {
+    this.ImageService.upload(this.files).subscribe(status => {
       this.clearFiles();
       this.uploadStatus = status;
       this.loading = false;
