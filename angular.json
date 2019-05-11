@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "way-more-spice": {
+    "waymo-spice": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/way-more-spice",
+            "outputPath": "dist/waymo-spice",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "way-more-spice:build"
+            "browserTarget": "waymo-spice:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "way-more-spice:build:production"
+              "browserTarget": "waymo-spice:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "way-more-spice:build"
+            "browserTarget": "waymo-spice:build"
           }
         },
         "test": {
@@ -88,7 +88,7 @@
         }
       }
     },
-    "way-more-spice-e2e": {
+    "waymo-spice-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -97,11 +97,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "way-more-spice:serve"
+            "devServerTarget": "waymo-spice:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "way-more-spice:serve:production"
+              "devServerTarget": "waymo-spice:serve:production"
             }
           }
         },
@@ -115,7 +115,7 @@
       }
     }
   },
-  "defaultProject": "way-more-spice",
+  "defaultProject": "waymo-spice",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

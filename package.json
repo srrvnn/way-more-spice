@@ -1,5 +1,5 @@
 {
-  "name": "way-more-spice",
+  "name": "waymo-spice",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href \"https://srrvnn.github.io/way-more-spice/\" && Users/srrvnn/Projects/way-more-spice/node_modules/angular-cli-ghpages/bin/angular-cli-ghpages --dir dist/way-more-spice"
+    "deploy": "ng build --prod --base-href \"https://srrvnn.github.io/waymo-spice/\" && Users/srrvnn/Projects/waymo-spice/node_modules/angular-cli-ghpages/bin/angular-cli-ghpages --dir dist/waymo-spice"
   },
   "private": true,
   "dependencies": {
